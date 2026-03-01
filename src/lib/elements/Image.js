@@ -6,7 +6,7 @@
 
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { Image as SUIImage, Ref } from "semantic-ui-react";
+import { Image as SUIImage } from "semantic-ui-react";
 import axios from "axios";
 
 /**
@@ -58,7 +58,7 @@ export class Image extends Component {
       : `${className} fallback_image`;
     const url = loadFallbackFirst ? fallbackSrc : src;
     return (
-      <Ref innerRef={this.myRef}>
+      <>
         <SUIImage
           className={loadingClass}
           alt={alt}
@@ -77,7 +77,7 @@ export class Image extends Component {
           })}
           {...UIprops}
         />
-      </Ref>
+      </>
     );
   }
 }
